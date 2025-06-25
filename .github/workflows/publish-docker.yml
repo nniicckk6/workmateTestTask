@@ -29,5 +29,5 @@ jobs:
           file: Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/workmateTestTask:${{ github.event.inputs.version }}
-            ghcr.io/${{ github.repository_owner }}/workmateTestTask:latest
+            ghcr.io/${{ github.repository_owner }}/workmatetesttask:${{ github.event.inputs.version }}
+            ghcr.io/${{ github.repository_owner }}/workmatetesttask:latest
