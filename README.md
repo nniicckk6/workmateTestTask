@@ -1,4 +1,4 @@
-# WorkmateTestProject
+# WorkmateTestTask
 
 HTTP-сервис для управления I/O-зависимыми задачами (время обработки 1–5 минут) с хранением в памяти.
 
@@ -9,8 +9,6 @@ HTTP-сервис для управления I/O-зависимыми зада�
 - [Build & Run](#build--run)
 - [Usage](#usage)
 - [Logging & Graceful Shutdown](#logging--graceful-shutdown)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Prerequisites
 
@@ -27,16 +25,16 @@ export PORT=9090
 ## Installation
 
 ```bash
-git clone сейчас вставлю
-cd workmateTestProject
+git clone https://github.com/nniicckk6/workmateTestTask.git
+cd workmateTestTask
 go mod download
 ```
 
 ## Build & Run
 
 ```bash
-go build -o workmateTestProject main.go
-PORT=8080 ./workmateTestProject
+go build -o workmateTestTask main.go
+PORT=8080 ./workmateTestTask
 ```
 
 Сервис доступен по адресу http://localhost:${PORT}
