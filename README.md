@@ -9,6 +9,7 @@ HTTP-сервис для управления I/O-зависимыми зада�
 - [Build & Run](#build--run)
 - [Usage](#usage)
 - [Logging & Graceful Shutdown](#logging--graceful-shutdown)
+- [CI/CD (GitHub Actions)](#ci/cd-github-actions)
 
 ## Prerequisites
 
@@ -38,9 +39,26 @@ go mod download
 
 ## Build & Run
 
+### Из исходников
 ```bash
 go build -o workmateTestTask main.go
 PORT=8080 ./workmateTestTask
+```
+
+### Через Docker
+```bash
+# Собрать образ
+docker build -t workmate-test-task .
+# Запустить контейнер
+docker run -d -p 8080:8080 \
+  -e PORT=8080 \
+  -e MAX_CONCURRENT_TASKS=10 \
+  workmate-test-task
+```
+
+### Через Docker Compose
+```bash
+docker-compose up -d
 ```
 
 Сервис доступен по адресу http://localhost:${PORT}
@@ -92,3 +110,10 @@ curl -X DELETE http://localhost:${PORT}/tasks/<uuid>
 
 - Логи запросов и времени обработки выводятся в стандартный вывод.
 - При получении сигналов SIGINT/SIGTERM сервер корректно завершается с таймаутом 5 секунд.
+
+## CI/CD (GitHub Actions)
+
+Ручной запуск CI доступен в разделе **Actions → Go CI** и **Publish Docker Image**. Для публикации Docker-образа:
+1. В Actions выберите **Publish Docker Image** и нажмите **Run workflow**.
+2. Укажите параметр `version` (например, `v1.0.0`), чтобы задать тег образа.
+3. Нажмите **Run workflow** — GitHub Actions соберёт и опубликует образ в GHCR.
