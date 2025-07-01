@@ -2,6 +2,10 @@
 
 HTTP-сервис для управления I/O-зависимыми задачами (время обработки 1–5 минут) с хранением в памяти.
 
+## Задача
+
+<img width=90% alt="Картинка тестового задания" src="https://github.com/nniicckk6/workmateTestTask/blob/master/Task/workmateTestTask.png?raw=true">
+
 ## Table of Contents
 - [Prerequisites](#prerequisites)
 - [Configuration](#configuration)
